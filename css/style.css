@@ -1,0 +1,61 @@
+:root {
+  --my-sidebar-bg: #051e34;
+  --search-bar-bg: #e5e5e5;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*NAVBAR*/
+.my-navbar {
+  height: 60px;
+}
+.form-control {
+  background-color: var(--search-bar-bg);
+}
+.mini-logo {
+  width: 45px;
+}
+
+/*SIDEBAR*/
+.my-sidebar {
+  height: calc(100vh - 60px);
+}
+.sidebar {
+  width: 50px;
+}
+.my-sidebar-bg {
+  background-color: var(--my-sidebar-bg);
+  background-image: url(../img/sidebar-bg.png);
+}
+
+/*HOVER*/
+.my-sidebar ul li a:hover {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+/*MEDIA QUERY*/
+@media screen and (min-width: 1px) {
+  .desk {
+    display: none;
+  }
+  .tab {
+    display: inline-block;
+  }
+  .sidebar {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .desk {
+    display: inline-block;
+  }
+  .tab {
+    display: none;
+  }
+  .sidebar {
+    width: 120px;
+  }
+}
