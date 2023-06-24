@@ -1,10 +1,16 @@
 :root {
   --my-sidebar-bg: #051e34;
   --search-bar-bg: #e5e5e5;
+  --my-row-bg: #1b72e8;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+.col, /*togliere dopo il contenuto*/
+[class*="col-"] {
+  border: 1px solid red;
+  min-height: 50px;
 }
 
 /*NAVBAR*/
@@ -19,7 +25,7 @@ body {
 }
 
 /*SIDEBAR*/
-.my-sidebar {
+.my-sidebar, .scroll {
   height: calc(100vh - 60px);
 }
 .sidebar {
@@ -28,6 +34,14 @@ body {
 .my-sidebar-bg {
   background-color: var(--my-sidebar-bg);
   background-image: url(../img/sidebar-bg.png);
+}
+
+/*CONTENT*/
+.my-container {
+  margin: 0;
+}
+.my-row{
+  background-color: var(--my-row-bg);
 }
 
 /*HOVER*/
@@ -43,12 +57,12 @@ body {
   .tab {
     display: inline-block;
   }
-  .sidebar {
-    width: 50px;
+  .scroll {
+    width: calc(100vw - 50px);
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
   .desk {
     display: inline-block;
   }
@@ -58,4 +72,11 @@ body {
   .sidebar {
     width: 120px;
   }
+  .scroll {
+    width: calc(100vw - 120px);
+  }
+}
+
+.prova { /*cancellare*/
+  border: 1px solid blue;
 }
