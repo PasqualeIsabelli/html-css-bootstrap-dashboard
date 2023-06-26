@@ -1,23 +1,24 @@
 :root {
   --my-sidebar-bg: #051e34;
   --search-bar-bg: #e5e5e5;
-  --my-row-bg: #1b72e8;
+  --content-top-bg: #1b72e8;
+  --badge-blue-bg: #165bba;
+  --badge-green-bg: #198754;
+  --badge-red-bg: #dc3545;
+  --badge-yellow-bg: #ffc107;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-.col, /*togliere dopo il contenuto*/
-[class*="col-"] {
-  border: 1px solid red;
-  min-height: 50px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /*NAVBAR*/
 .my-navbar {
   height: 60px;
 }
-.form-control {
+.my-form-control {
   background-color: var(--search-bar-bg);
 }
 .mini-logo {
@@ -43,10 +44,24 @@ body {
 .my-row{
   background-color: var(--my-row-bg);
 }
+.content-top {
+  background-color: var(--content-top-bg);
+}
+.blue-badge {
+  background-color: var(--badge-blue-bg);
+  font-size: 11px;
+}
+.table, .card {
+  font-size: 13px;
+}
 
 /*HOVER*/
 .my-sidebar ul li a:hover {
   background-color: rgba(255, 255, 255, .5);
+}
+
+.input-group-text{
+  background-color: var(--search-bar-bg);
 }
 
 /*MEDIA QUERY*/
@@ -75,8 +90,4 @@ body {
   .scroll {
     width: calc(100vw - 120px);
   }
-}
-
-.prova { /*cancellare*/
-  border: 1px solid blue;
 }

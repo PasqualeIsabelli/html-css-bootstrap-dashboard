@@ -17,10 +17,10 @@
         <form class="container">
           <div class="input-group">
             <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i></span>
-            <input type="text" class="form-control" placeholder="Prova a cercare: Lezione di Laravel" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control my-form-control" placeholder="Prova a cercare: Lezione di Laravel" aria-label="Username" aria-describedby="basic-addon1">
           </div>
         </form>
-        <div class="d-flex navbar-collapse" id="navbarSupportedContent">
+        <div id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item me-3">
               <a class="desk" href="#"><i class="fa-solid fa-list" style="color: #5b5858;"></i></a>
@@ -73,77 +73,261 @@
 
       <!--CONTENT-->
       <section class="col-10 scroll overflow-auto d-flex flex-column">
-        <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-3 order-md-3">nuovo studente</div>
-          <div class="col-sm-12 col-md-4 col-lg-5 order-md-1">boolean</div>
-          <div class="col-sm-12 col-md-4 col-lg-4 order-md-2">studenti</div>
+        <!--Barra alta content-->
+        <div class="row content-top text-white">
+          <div class="col-sm-12 col-md-4 col-lg-3 order-md-3 ps-3 py-3">
+            <p class="d-inline-block pe-3">Nuovo Studente</p>
+            <button class="btn border d-inline-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-plus" style="color: #ffffff;"></i></button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo studente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <!--Offcanvas-->
+              <div class="offcanvas-body">
+                <div class="row d-md-flex">
+                  <div class="mb-2 col-md-6">
+                    <label for="formGroupExampleInput" class="form-label fw-bold">Nome</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                  </div>
+                  <div class="mb-2 col-md-6">
+                    <label for="formGroupExampleInput" class="form-label fw-bold">Cognome</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                  </div>
+                </div>
+                <div class="row d-md-flex">
+                  <div class="input-group mb-2 col-md-6">
+                    <label for="inputPassword4" class="form-label fw-bold">Email</label>
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="mb-2 col-md-6">
+                    <label for="inputPassword4" class="form-label fw-bold">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                  </div>
+                </div>
+                <div class="row d-md-flex">
+                  <div class="input-group mb-2 col-md-6">
+                    <label for="inputPassword4" class="form-label fw-bold">Indirizzo Email</label>
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="mb-2 col-md-6">
+                    <label for="inputPassword4" class="form-label fw-bold">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="formGroupExampleInput" class="form-label fw-bold">Indirizzo</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput">
+                </div>
+                <div class="row d-md-flex">
+                  <div class="mb-2 col-md-5">
+                    <label for="formGroupExampleInput" class="form-label fw-bold">Città</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                  </div>
+                  <div class="mb-2 col-md-4">
+                    <label for="inputPassword4" class="form-label fw-bold">Stato</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected>Scegli...</option>
+                      <option value="1">Italia</option>
+                      <option value="2">Germania</option>
+                      <option value="3">Francia</option>
+                    </select>
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="formGroupExampleInput" class="form-label fw-bold">CAP</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="input-group mb-2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Scegli file</button>
+                    <input type="text" class="form-control" placeholder="Nessun file selezionato" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input class="form-check-input" type="checkbox"> <span>Seleziona per proseguire</span>
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary">Salva</button> <button type="button" class="btn btn-warning">Svuota</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--Card-->
+          <div class="col-sm-12 col-md-4 col-lg-6 order-md-1 ps-3 d-flex align-items-center">
+            <div>
+              <h3>Boolean <span class="badge rounded-pill blue-badge text-small">Piano blaze</span></h3>
+              <span class="badge rounded-pill blue-badge">3 app</span> <span><i class="fa-solid fa-angles-right" style="color: #ffffff;"></i></span> <span class="badge rounded-pill blue-badge d-lg-none">+</span> <span class="badge rounded-pill blue-badge d-none d-lg-inline-block">Boolean mobile app</span> <span class="badge rounded-pill blue-badge d-none d-lg-inline-block">Boolean web app</span> <span class="badge rounded-pill blue-badge d-none d-lg-inline-block">Boolean blog app</span>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-3 order-md-2 ps-3 py-3">
+            <p>Studenti online negli ultimi 30 minuti</p>
+            <h3>125</h3>
+          </div>
         </div>
-        <div class="row">
+        <div class="row p-4">
           <div class="col-sm-12 col-lg-8">
             <div class="row flex-column">
-              <div class="prova col">prossime classi</div>
-              <div class="prova col">faq</div> 
+              <div class="col">
+                <div class="card">
+                  <h3 class="px-3 py-2">Prossime classi</h3>
+                  <div class="card-body border-top">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nome</th>
+                          <th class="text-center">Data Inizio</th>
+                          <th class="text-center">ROI</th>
+                          <th class="text-center">Stato</th>
+                          <th class="text-center">Azioni</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 75</td>
+                          <td class="text-center fw-bold">15 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 76</td>
+                          <td class="text-center fw-bold">16 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 77</td>
+                          <td class="text-center fw-bold">17 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-warning">process</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 78</td>
+                          <td class="text-center fw-bold">18 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 79</td>
+                          <td class="text-center fw-bold">15 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-danger">failed</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 80</td>
+                          <td class="text-center fw-bold">20 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 81</td>
+                          <td class="text-center fw-bold">21 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold"><img src="img/class-avatar.jpg" alt="class-avatar" width="30"> Classe 82</td>
+                          <td class="text-center fw-bold">22 Feb 2021</td>
+                          <td class="text-center fw-bold">20%</td>
+                          <td class="text-center"><span class="badge text-bg-success">Done</span></td>
+                          <td class="text-center"><button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-pen" style="color: currentColor;"></i></button> <button type="button" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" class="btn btn-outline-secondary"><i class="fa-solid fa-trash" style="color: currentColor;"></i></button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col mt-4">
+                <div class="card mb-4">
+                  <h3 class="px-3 py-2">F.A.Q.</h3>
+                  <div class="card-body border-top">
+                    <div class="card">
+                      <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              <strong>Come aggiungere un nuovo studente?</strong>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                            <strong>Clicca sul + in alto nella sezione blu.</strong>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              <strong>Come posso accedere alle informazioni del mio account?</strong>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                            <strong>Clicca sull'icona della campanella.</strong>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                              <strong>Posso usare questa dashboard da mobile?</strong>
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <p>Made by <strong>Pasquale Isabelli</strong></p>
+                              <p>Classe 102 Boolean</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             </div>
           </div>
           <div class="col-sm-12 col-lg-4">
             <div class="row flex-column">
-              <div class="prova col">todo</div>
-              <div class="prova col">grafico</div> 
+              <div class="col">
+                <div class="card">
+                  <h3 class="px-3 py-2">Todo</h3>
+                  <div class="card-body border-top">
+                    <div class="card">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item fw-bold"><input class="form-check-input" type="checkbox"> Kickoff nuove classi</li>
+                        <li class="list-group-item fw-bold"><input class="form-check-input" type="checkbox"> Lezione su Bootstrap 5 in classe #75</li>
+                        <li class="list-group-item fw-bold"><input class="form-check-input" type="checkbox"> Controllare username github studenti</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col mt-4">
+                <div class="card">
+                  <div class="card-body border-top">
+                    <div class="card">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <img style="width: 100%;" src="img/stats.jpeg" alt="stats">
+                          <h5 class="mt-2">Utenti attivi</h5>
+                          <p class="fw-bold mb-0">Lista degli utenti attivi in piattaforma nell'ultimo mese</p>
+                        </li>
+                        <li class="list-group-item fw-bold">Gennaio: 1200</li>
+                        <li class="list-group-item fw-bold">Febbraio: 800</li>
+                        <li class="list-group-item fw-bold">Marzo: 1500</li>
+                        <li class="list-group-item fw-bold"><a href="#">Visualizza report approfondito</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             </div>
           </div>
-        </div>
-        <div class="row">
-          <h1>prova scroll</h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam temporibus facilis magni minus illo nam magnam delectus veniam consequuntur commodi, eaque non quaerat eius vel placeat velit, dolorem, voluptate iste.
-          Natus officiis cupiditate voluptatum illo optio iste mollitia ipsa distinctio nam veniam quos incidunt molestias voluptas asperiores rem blanditiis, libero eaque voluptatem animi. Dolor fuga, excepturi aliquam error obcaecati commodi.
-          Itaque dignissimos deleniti incidunt magnam explicabo labore aut vitae, quasi tempora ullam eveniet iste, repudiandae facere aperiam perferendis eos numquam aliquid eum deserunt delectus vel quam dolore voluptates officia. Voluptate.
-          Corporis vero cumque tenetur minima nihil, neque consequuntur fuga sit. Et quibusdam error numquam labore amet officia laboriosam voluptate ipsum itaque repellat, eveniet, totam sequi ex explicabo, inventore ipsa praesentium!
-          Fuga officia alias sed vel ea iusto, optio cumque corporis praesentium, expedita incidunt sequi aliquid consectetur, doloremque eveniet ipsam odit similique nesciunt quasi recusandae? Delectus praesentium deserunt id ex distinctio?
-          Cum itaque ex perspiciatis officiis veniam dolorum laboriosam tenetur molestiae vel. Molestias eaque sunt modi earum harum architecto, doloremque aspernatur voluptatum. Tempora earum totam, nihil voluptatum vero autem non quisquam?
-          Dignissimos adipisci minima corporis officiis, magnam incidunt provident eligendi, odit, quis eos quos voluptate temporibus? Blanditiis sed, quam, doloremque dolorem labore facilis voluptatem animi quo eaque officiis autem, dicta esse?
-          Eveniet similique consequuntur soluta explicabo voluptatum! Eveniet vero omnis, recusandae sapiente unde quisquam quae ex esse id! Atque, eius, esse aut, laboriosam quibusdam doloribus explicabo voluptas ipsa adipisci quo magni.
-          Itaque, vero sunt ea minima rerum, minus explicabo dolores similique tempora totam possimus dolore quisquam velit omnis. Nisi officia qui consectetur earum dicta fugit? In nostrum modi nesciunt harum placeat!
-          Fugit perferendis ea praesentium saepe accusantium necessitatibus asperiores ipsa minus, culpa numquam doloribus adipisci eius labore! Blanditiis quibusdam, sequi vel tempora quae beatae consequatur ipsa obcaecati, optio est nulla iure?
-          Alias doloremque illo repellendus iste ipsam, delectus voluptatibus quibusdam quam eum eaque quia odit fugit distinctio harum, ducimus modi. Eius numquam maiores delectus ipsum minus qui cupiditate culpa a optio.
-          Natus repudiandae reiciendis accusamus nihil, officiis adipisci consequuntur ea vero! Ipsa accusantium maiores hic dolor iste dolorem alias vitae quasi illo similique, unde consequatur nemo excepturi fuga, commodi odit saepe!
-          Quam voluptas nobis quos deserunt iusto quod tenetur magni soluta laboriosam, ab totam enim dolorem architecto quis voluptatum eligendi amet quo? Minus fugit sint eaque ab voluptates quasi, atque necessitatibus!
-          Fugiat iste non odio earum alias quo quam culpa odit sunt inventore corporis, pariatur est mollitia ipsum laudantium voluptas dolor animi sapiente! Voluptatibus odit facilis magni possimus quis hic id.
-          Sint omnis quisquam eaque sed, ab nisi iure porro officiis. Provident quibusdam minima vero eaque nemo beatae mollitia ab dolore voluptate perferendis, dicta culpa aspernatur illum sapiente numquam minus fugit.
-          Quaerat error saepe sit? Modi molestiae repellendus repudiandae sint quos non? Cum quod incidunt inventore ex numquam eos nostrum modi molestias iste! Quos iste odio nam laboriosam necessitatibus aliquam accusantium?
-          Incidunt expedita quos commodi praesentium laborum illum, nisi, vitae id iusto enim unde! Libero, perspiciatis perferendis eaque temporibus illum alias qui iure officia assumenda quo voluptates eos iste necessitatibus sequi!
-          Non enim libero vel quos maxime, illum numquam. Officia excepturi similique reiciendis, sit voluptate dolores ex ipsam est fugit beatae ad cupiditate repellat aspernatur veritatis delectus omnis qui explicabo numquam?
-          Saepe, voluptatibus laborum numquam sapiente placeat explicabo architecto impedit libero. Illum consequatur voluptas laudantium autem eligendi unde, minima adipisci perspiciatis corporis dolorem dolorum animi? Fugit officiis perspiciatis quis repudiandae deserunt.
-          Minus culpa facere, inventore minima iure eum sunt? Nisi amet quam ab debitis quibusdam magni aliquam sapiente exercitationem nemo voluptatibus sint, ipsa nihil qui porro id esse, cumque, beatae optio?
-          Eum accusamus earum minima delectus voluptatum alias unde sed placeat odio at voluptatem, corrupti, sequi ratione recusandae voluptatibus similique? Voluptate ipsam placeat ab nihil, porro doloribus consequatur odit iste deserunt.
-          Id voluptatum ex praesentium veritatis in dolor, ipsum vero recusandae, itaque, maxime fugiat voluptates rerum culpa doloribus quas neque inventore dicta deleniti. Sunt, labore quia accusantium quam nobis quis repudiandae.
-          Magni, impedit sunt a tenetur quas doloremque, reprehenderit ratione minima doloribus fugit beatae nesciunt. Delectus possimus porro, sequi libero ab eveniet, dignissimos architecto doloremque nulla eius autem obcaecati numquam suscipit!
-          Totam tempore deserunt ratione autem consectetur eius dolorem vel, iusto laboriosam non explicabo earum fuga facere eos ab eveniet maiores dolores delectus asperiores est sed labore sint provident reiciendis! Sapiente?
-          Facilis qui ipsum distinctio hic veritatis soluta reprehenderit nostrum. Laboriosam, sint? Eos reiciendis voluptas magnam delectus maxime? Ipsum molestias tempore architecto ducimus, ad tempora aliquid nisi eum corporis? Quas, dolorum?
-          Praesentium iste illum dignissimos voluptatem. Officia possimus numquam a quos ab laborum eum odio facere, corrupti nisi, iste, molestias soluta culpa eos recusandae libero amet. Quidem eaque molestias ullam repellendus!
-          Ut, modi? Reprehenderit minus ullam dolorum itaque quis. Dolores soluta, laudantium cum unde quisquam architecto laboriosam aliquam quos vitae tempora reprehenderit, velit expedita atque reiciendis tenetur asperiores ipsum, ullam pariatur.
-          Non libero a harum minima iste tenetur ad voluptatem quo voluptatibus, quis ipsum minus aliquam in ex, porro optio quas natus ullam laborum officia fugit totam beatae dolorum. Reiciendis, aspernatur.
-          Tenetur sint omnis consectetur ex aperiam recusandae? Aliquid, ad. Cumque, dolorum fuga adipisci corrupti laudantium eum ipsam animi voluptatum, quo porro odio unde aspernatur, tempore accusamus deserunt non quam voluptatem.
-          Et, dolorem assumenda optio labore eaque similique obcaecati placeat sapiente? Quibusdam totam eveniet iure, doloremque doloribus repudiandae veritatis illum eos nemo voluptatem laudantium possimus expedita vitae culpa dolor necessitatibus aperiam.
-          Nemo est corporis, praesentium ad vero vitae assumenda in, odit facere accusamus repellendus cum quaerat quidem consequatur, maxime obcaecati commodi incidunt quia autem deleniti? Architecto asperiores commodi et quae odio.
-          Soluta eius explicabo temporibus esse a, consectetur repellendus sit rem, architecto, aspernatur qui dolor! In maiores fugiat, unde doloribus nihil expedita hic quisquam enim quibusdam ullam soluta ut dolorem recusandae.
-          Corporis amet consequuntur iusto odio iure ea magni nemo. Magnam, a facere est vitae eos, consequatur libero eius id tempore, voluptatum deserunt ipsum quisquam reiciendis adipisci quaerat. Molestias, deleniti dolorem!
-          Est, in velit. Nobis aperiam reprehenderit nihil, fugiat voluptatibus facere? Neque reprehenderit maxime deleniti earum voluptatem quo rerum possimus natus necessitatibus officiis, adipisci doloremque porro suscipit, ducimus mollitia atque eos?
-          Voluptates et iure, facere iusto deleniti quasi veritatis quaerat unde? Nihil ut illo aspernatur, sint impedit minima libero dolorum, architecto autem maxime nesciunt perspiciatis. Quidem mollitia perferendis dolore fugit architecto!
-          Mollitia consequatur nisi suscipit quis, aspernatur tenetur unde similique dignissimos repudiandae facilis eos, labore, eveniet consequuntur fugiat tempore commodi dolorem laboriosam autem vitae. Nostrum voluptatum fugit ullam voluptate, totam unde.
-          Possimus quibusdam dolorum similique recusandae repellat. Pariatur non porro vero aperiam maxime, repudiandae excepturi assumenda ipsa ex aspernatur ad numquam facilis in maiores voluptas cumque tempora autem qui debitis odit?
-          Asperiores quas tenetur, aliquid reiciendis delectus ut distinctio minus magnam enim sequi quaerat deserunt quibusdam molestiae odio fugiat vel architecto! Assumenda culpa odio explicabo natus, corporis dolorem voluptate sunt accusantium.
-          Culpa maxime ad voluptate, repudiandae ipsa doloremque modi vel eligendi eius non voluptatibus rem dolorum possimus nulla, earum ratione. Provident itaque ea possimus praesentium, dolore sit sed placeat eaque eius!
-          Sit temporibus voluptatum magnam, et est ab delectus nihil vitae vero expedita cumque eaque aperiam animi eius deleniti voluptatibus porro. Illum, doloribus quos laborum eos dolore earum nemo inventore mollitia?
-          Earum alias dolor nihil, odio nobis quidem quia perspiciatis ad incidunt velit dignissimos neque dicta voluptatibus autem cupiditate inventore qui illo rem laudantium aliquid animi cum! Consectetur autem ipsam inventore?
-          A nobis cumque porro provident, accusamus natus reiciendis distinctio adipisci quaerat, cum eligendi suscipit deserunt nisi rem sunt animi veritatis id magnam! Fuga neque odit ex molestias velit et nam.
-          Tenetur, reprehenderit harum perferendis porro assumenda, sint unde omnis libero quibusdam quis commodi saepe labore obcaecati vitae voluptatibus aliquid excepturi debitis facere asperiores et autem hic sed. Adipisci, hic deleniti?
-          Ratione accusantium, quos repudiandae aliquam voluptatem modi quae ullam voluptas error! Officia neque ipsam ea maxime dicta corrupti et blanditiis sunt vitae maiores mollitia, pariatur optio, repellat sequi id recusandae.
-          Similique est perferendis ad repellendus laboriosam, rerum quia incidunt deserunt repellat corrupti quas, accusantium sunt fugit ipsum ab aperiam natus sed totam dolorum. Quis fuga maiores, numquam repellendus iure laboriosam.
-          Provident temporibus commodi tempore dolorum consectetur consequuntur doloribus porro vero debitis perferendis eum nam minima expedita esse voluptates nemo, alias, in sit totam a facere reiciendis possimus! Distinctio, porro laborum?
-          Fugiat iure aliquid reprehenderit soluta repudiandae, tempore, doloribus numquam cum vel dolorem quasi eveniet odit itaque laudantium quas et. Deserunt ullam numquam quidem fuga expedita voluptate minima repellendus sed quis.
-          Nostrum culpa alias officia debitis. Laborum aliquid odit sequi, animi dolorem dolorum numquam assumenda hic praesentium eveniet consequuntur ipsam tempora rerum nostrum, sit recusandae molestiae, impedit consectetur harum voluptatem! Perferendis.
-          Eum vitae earum assumenda? Suscipit odio odit sequi tenetur. Quos velit sit vel minima similique rem tempore libero, id, dolore aperiam porro tenetur? Totam reiciendis eaque magni. Aliquam, vero rem.
-          Earum fugiat temporibus rem, possimus impedit blanditiis inventore dolor quo eius exercitationem eum. Nostrum eum laudantium, recusandae quidem ducimus placeat saepe ipsa, ad animi quibusdam voluptatem totam ipsum architecto enim.
         </div>
       </section>
     </div>
